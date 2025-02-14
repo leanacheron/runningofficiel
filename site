@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur mon site</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>À propos</h2>
+        <p>Ce site est un modèle de base prêt à être mis en ligne.</p>
+    </section>
+    
+    <section id="services">
+        <h2>Nos Services</h2>
+        <p>Découvrez nos services et offres exclusives.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Envoyez-nous un message à <a href="mailto:contact@monsite.com">contact@monsite.com</a>.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Mon Site Web. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
