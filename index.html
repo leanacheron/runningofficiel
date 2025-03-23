@@ -40,14 +40,14 @@
 <body>
     <div class="container">
         <h2>Entrez votre temps et distance</h2>
-        <input type="text" id="timeInput" placeholder="hh:mm:ss">
-        <br>
         <select id="distanceInput">
             <option value="5">5 km</option>
             <option value="10" selected>10 km</option>
             <option value="21">21 km</option>
             <option value="42">42 km</option>
         </select>
+        <br>
+        <input type="text" id="timeInput" placeholder="hh:mm:ss">
         <br>
         <button onclick="calculatePace()">Calculer</button>
         <p id="result"></p>
