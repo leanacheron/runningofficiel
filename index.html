@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Running Officiel</title>
+    <title>Calculateur d'Allure</title>
+    <style>
+        body {
+            background-color: #272727;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .container {
+            background-color: #555;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FFD700;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello les coureurs</h1>
-    <a href="https://leanacheron.fr" target="_blank"><button>Voir</button></a>
+    <div class="container">
+        <h2>Entrez votre temps sur 10 km</h2>
+        <input type="text" id="timeInput" placeholder="hh:mm:ss">
+        <br>
+        <button onclick="calculatePace()">Calculer</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function calculatePace() {
+            const timeStr = document.getElementById('timeInput').value;
+            const timeParts = timeStr.split(':').map(Number);
+            
+            if (timeParts.length !== 3) {
+                document.getElementById('result').innerText = "Format invalide. Utilisez hh:mm:ss";
+                return;
+            }
+            
+            const totalSeconds = (timeParts[0] * 3600) + (timeParts[1] * 60) + timeParts[2];
+            const paceSeconds = totalSeconds / 10;
+            const paceMinutes = Math.floor(paceSeconds / 60);
+            const paceRemSeconds = Math.round(paceSeconds % 60);
+            const speed = (10 / (totalSeconds / 3600)).toFixed(2);
+            
+            document.getElementById('result').innerText = `Allure: ${paceMinutes}m${paceRemSeconds}s/km \n Vitesse: ${speed} km/h`;
+        }
+    </script>
 </body>
 </html>
